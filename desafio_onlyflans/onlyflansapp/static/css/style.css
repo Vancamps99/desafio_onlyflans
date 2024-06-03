@@ -1,0 +1,50 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+section[id]{
+    scroll-margin-top: 65px;
+}
+
+.bg-color-dark {
+    background-color: black;
+}
+.bg-color-grey {
+    background-color: gray;
+}
+
+.bg-lightblue{
+    background-color: #00C9F2;
+    color: #FFFFFF;   
+}
+
+.bg-cambia-color-verder{
+    background-color: #4BDEA0;
+}
+
+header {
+    background-color: #4BDEA0;
+    height: 100;
+    width: 150;
+}
+
+.color-letters {
+    color: #FFFFFF;
+}
+
+.navbar {
+    transition: all 0.5s;
+}
+
+.navbar-scrolled {
+    background-color: black;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: var(--bd-violet-bg);
+    --bs-tooltip-color: var(--bs-white);
+  }
+
