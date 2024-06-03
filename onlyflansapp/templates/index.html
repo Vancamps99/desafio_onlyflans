@@ -1,6 +1,8 @@
 {% extends "base.html" %} {% block title %} Bienvenido a OnlyFlans {% endblock%}
 {% load static %}
 {% block 'content' %}
+
+<!-- Carousel -->
 <div class="container">
     <div id="carouselExampleSlidesOnly" class="carousel slide mx-5 my-5" data-bs-ride="carousel" data-bs-interval="6000">
         <div class="carousel-inner">
@@ -27,7 +29,8 @@
         </a>
     </div>
 </div>
-
+<!-- Fin carousel -->
+<!-- Form -->
 <section class="bg-color-grey px-2 py-4" id="contacto">
     <div class="container">
         <h2 class="text-center color-letters py-2">CONTACTO</h2>
@@ -35,9 +38,7 @@
         <form class="color-letters">                    
             <div class="mb-3">
                 <label for="exampleInputNombre" class="form-label"
-                    >Nombre</label
-                >
-                
+                    >Nombre</label>                
                 <input
                     type="text"
                     class="form-control"
@@ -47,9 +48,19 @@
                 />
             </div>
             <div class="mb-3">
+                <label for="exampleInputCorreo" class="form-label"
+                    >Correo Electronico</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputAsunto"
+                    data-bs-toggle="tooltip" data-bs-title="Correo a escribir"
+                    data-bs-custom-class="custom-tooltip"
+                />
+            </div>
+            <div class="mb-3">
                 <label for="exampleInputAsunto" class="form-label"
-                    >Asunto</label
-                >
+                    >Asunto</label>
                 <input
                     type="text"
                     class="form-control"
@@ -60,8 +71,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputMensaje" class="form-label"
-                    >Mensaje</label
-                >
+                    >Mensaje</label>
                 <div class="form-floating">
                     <textarea
                         class="form-control"
@@ -73,7 +83,6 @@
                     ></textarea>
                 </div>
             </div>
-
             <button type="submit" class="btn btn-info bg-lightblue" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Enviar comentarios"
             data-bs-custom-class="custom-tooltip">
                 Enviar
@@ -81,4 +90,6 @@
         </form>
     </div>
 </section>
+<!-- Fin form -->
+
 {% endblock%}
