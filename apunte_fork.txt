@@ -1,0 +1,6 @@
+copie y mande a mi git git clone https://github.com/Vancamps99/desafio_onlyflans.git
+cd desafio_onlyflans
+python -m venv ve_proyecto #crear entorno virtual ve_proyecto
+.\ve_proyecto\Scripts\Activate #activar entorno
+
+python manage.py runserver
