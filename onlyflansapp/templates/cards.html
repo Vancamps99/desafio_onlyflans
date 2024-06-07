@@ -1,0 +1,14 @@
+<div class="row text-align-center px-5">
+    {% for flan in flanes  %}
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card my-2 mx-2" style="width: 18rem;">
+        <div class="card-body">
+        <img src="{{flan.image_url}}" class="card-img-top" alt="{{flan.slug}}">
+          <h5 class="card-title">{{flan.name}}</h5>
+          <hr class="border-2"/>
+          <p class="card-text">{{flan.description}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+</div>

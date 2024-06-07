@@ -4,6 +4,11 @@
 
 {% block 'content' %}
 <div class="container">
-    <p>prueba de contenido en el welcome</p>
+    <h2 class="my-2">Bienvenido</h2>
+    <h2 class="text-center py-2">FLANES ESPECIALES</h2>
+    <hr class="border-2 py-2"/>
+    {% block 'cards' %}
+    {% include "cards.html" %}
+    {% endblock  %}
 </div>
 {% endblock%}

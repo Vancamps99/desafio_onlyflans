@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} Contactanos {% endblock %}
+
+{% block 'content' %}
+<div class="container">
+    
+<h2 class="text-center py-4">CONTACTO</h2>
+<hr class="border-2" />
+
+<form action="{% url "contact" %}" method="post"> 
+    {% csrf_token %}
+    <div>
+        <label class="form-label" for="id_customer_email">Correo Electronico</label>
+        <input class="form-control" type="email" name="customer_email" maxlength="320" placeholder="name@example.com" required="" id="id_customer_email">        
+    </div>    
+    <div>
+        <label class="form-label" for="id_customer_name">Nombre</label>
+        <input class="form-control" type="text" name="customer_name" maxlength="64" required="" id="id_customer_name">
+    </div>    
+    <div>
+        <label class="form-label" for="id_message">Mensaje</label>
+        <input class="form-control" type="text" style="height: 100px" name="message" required="" id="id_message">
+    </div>
+    <button type="submit" class="btn btn-primary my-3">Enviar</button>
+</form>
+
+</div>
+{% endblock%}

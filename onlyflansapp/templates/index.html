@@ -3,7 +3,7 @@
 {% block 'content' %}
 
 <!-- Carousel -->
-<div class="container">
+
     <div id="carouselExampleSlidesOnly" class="carousel slide mx-5 my-5" data-bs-ride="carousel" data-bs-interval="6000">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -28,68 +28,14 @@
             <span class="visually-hidden">Siguiente</span>
         </a>
     </div>
-</div>
+
 <!-- Fin carousel -->
-<!-- Form -->
-<section class="bg-color-grey px-2 py-4" id="contacto">
-    <div class="container">
-        <h2 class="text-center color-letters py-2">CONTACTO</h2>
-        <hr class="color-letters border-2" />
-        <form class="color-letters">                    
-            <div class="mb-3">
-                <label for="exampleInputNombre" class="form-label"
-                    >Nombre</label>                
-                <input
-                    type="text"
-                    class="form-control"
-                    id="exampleInputNombre"
-                    data-bs-toggle="tooltip" data-bs-title="Nombre a escribir"
-                    data-bs-custom-class="custom-tooltip"
-                />
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputCorreo" class="form-label"
-                    >Correo Electronico</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="exampleInputAsunto"
-                    data-bs-toggle="tooltip" data-bs-title="Correo a escribir"
-                    data-bs-custom-class="custom-tooltip"
-                />
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputAsunto" class="form-label"
-                    >Asunto</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="exampleInputAsunto"
-                    data-bs-toggle="tooltip" data-bs-title="Asunto a escribir"
-                    data-bs-custom-class="custom-tooltip"
-                />
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputMensaje" class="form-label"
-                    >Mensaje</label>
-                <div class="form-floating">
-                    <textarea
-                        class="form-control"
-                        placeholder=""
-                        id="floatingTextarea2"
-                        style="height: 100px"
-                        data-bs-toggle="tooltip" data-bs-title="Mensaje a escribir"
-                        data-bs-custom-class="custom-tooltip"
-                    ></textarea>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-info bg-lightblue" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Enviar comentarios"
-            data-bs-custom-class="custom-tooltip">
-                Enviar
-            </button>
-        </form>
-    </div>
-</section>
-<!-- Fin form -->
+<h2 class="text-center py-2">FLANES ESPECIALES</h2>
+<hr class="border-2 py-2"/>
+<!-- Cards -->
+    {% block 'cards' %}
+    {% include "cards.html" %}
+    {% endblock  %}
+<!-- Fin Cards -->
 
 {% endblock%}
