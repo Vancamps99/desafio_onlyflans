@@ -20,8 +20,12 @@
     </head>          
     <body>
         <!-- Header -->
-        <header class="bg-cambia-color-verder">
-            
+        <header class="bg-lightblue px-2 py-2">
+            <div class="container">
+                <p class="color-letters text-center">
+                    Nos ubicamos en Providencia, a pasos del metro Parque Bustamante.
+                </p>
+            </div>
         </header>
         <!-- Navbar -->
         
@@ -30,9 +34,11 @@
             {% endblock %}        
             
             <!-- aca se crean los bloques de contenidos-->
-            
-            {% block 'content' %}                
+            <div class="container">
+            {% block 'content' %}
+                
             {% endblock %}
+            </div>
             <!-- aca termina el bloque del contenido -->
             
             <!-- Footer -->
