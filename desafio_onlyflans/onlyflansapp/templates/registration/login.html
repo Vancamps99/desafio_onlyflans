@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block 'content' %}
+<div class="d-flex justify-content-center align-items-top">
+  <div class="mx-5 my-5">
+    <h2 class="text-center py-2">Iniciar sesión</h2>
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+      <p>Su nombre de usuario y contraseña no coinciden. Inténtalo de nuevo.</p>
+    </div>
+    {% endif %}
+
+    {% if next %}
+      {% if user.is_authenticated %}
+      <div class="alert alert-warning" role="alert">
+        <p>Su cuenta no tiene acceso a esta página. Para continuar,
+        inicie sesión con una cuenta que tenga acceso.</p>
+      </div>
+      {% else %}
+      <div class="alert alert-info" role="alert">
+        <p>Por favor inicie sesión para ver esta página.</p>
+      </div>
+      {% endif %}
+    {% endif %}
+
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+            <tbody>
+                <tr>
+                    <td><label class="form-label" for="id_username">Nombre de usuario</label></td>
+                    <td><input type="text" class="form-control mx-2 my-2" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username"></td>
+                </tr>
+                <tr>
+                    <td><label class="form-label" for="id_password">Contraseña</label></td>
+                    <td><input type="password" class="form-control mx-2 my-2" name="password" autocomplete="current-password" required="" id="id_password"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit" class="btn btn-info my-2">Login</button>
+        <input type="hidden" name="next" value="">
+    </form>
+  </div>
+</div>
+{% endblock %}
+

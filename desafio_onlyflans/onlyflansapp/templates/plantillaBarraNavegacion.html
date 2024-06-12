@@ -17,10 +17,19 @@
         <div class="collapse navbar-collapse me-auto" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             
-            {% if 'key' in request.session %}
+            {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link color-letters" href="{% url 'welcome' %}">Bienvenido</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link color-letters" aria-current="page" href="{% url 'index' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link color-letters" href="{% url 'about' %}">Sobre nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link color-letters" href="{% url 'contact' %}">Contactar</a>
+            </li> 
             {% else %}
             <li class="nav-item">
               <a class="nav-link color-letters" aria-current="page" href="{% url 'index' %}">Inicio</a>
@@ -39,11 +48,14 @@
                 Login
                 </a>
                 <ul class="dropdown-menu">
-                  {% if 'key' in request.session %}
-                  <li><a class="dropdown-item" href="#">Salir</a></li>
+                  {% if user.is_authenticated %}
+                  <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button class="dropdown-item" type="submit">Cerrar sesión</button>
+                  </form>
                   {% else %}
-                  <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesion</a></li>
-                  <li><a class="dropdown-item" href="#">Registro</a></li>
+                  <li><a class="dropdown-item" href="{% url 'login'%}">Iniciar sesión</a></li>
+                  <li><a class="dropdown-item" href="{% url 'registro' %}">Registro</a></li>
                   {% endif %}
                 </ul>
             </li>

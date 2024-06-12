@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %} Iniciar sesion{% endblock%}
+{% block 'content' %}
+    <div class="container">
+        <div class="row  my-5 mx-5">
+            <h2 class="text-center py-2">Iniciar sesion</h2>
+            <hr class="border-2" />
+            <form action="{% url "login" %}" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electronico</label>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Tu información nunca sera compartida</div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>                
+                <button type="submit" class="btn btn-info">Enviar</button>
+            </form>
+        </div>
+    </div>
+  {% endblock %}

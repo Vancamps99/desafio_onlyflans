@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %} Registro {% endblock %}
+
+{% block 'content' %}
+<div class="container">
+    
+<h2 class="text-center py-4">REGISTRO</h2>
+<hr class="border-2" />
+
+<form action="{% url "registro" %}" method="post"> 
+    {% csrf_token %}
+    <div>
+        <label class="form-label" for="id_username">Nombre de usuario</label>
+        <input class="form-control" type="text" name="username" maxlength="64" required="" id="id_username">        
+    </div>
+    <div>
+        <label class="form-label" for="id_email">Correo Electronico</label>
+        <input class="form-control" type="email" name="email" maxlength="320" placeholder="name@example.com" required="" id="id_email">        
+    </div> 
+    <div>
+        <label class="form-label" for="id_password">Contraseña</label>
+        <input class="form-control" type="password" name="password" maxlength="64" required="" id="id_password">        
+    </div>   
+    <div>
+        <label class="form-label" for="id_first_name">Nombre</label>
+        <input class="form-control" type="text" name="first_name" maxlength="64" required="" id="id_first_name">
+    </div>    
+    <div>
+        <label class="form-label" for="id_last_name">Apellido</label>
+        <input class="form-control" type="text" name="last_name" maxlength="64" required="" id="id_last_name">
+    </div>
+    <button type="submit" class="btn btn-info bg-lightblue my-3">Enviar</button>
+</form>
+
+</div>
+{% endblock%}
