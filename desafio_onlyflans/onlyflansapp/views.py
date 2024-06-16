@@ -56,16 +56,18 @@ def contact(request):
 
 def registro(request):
     if request.method == "POST":
+        # Obtener los datos del formulario POST
         username = request.POST["username"]
         email = request.POST["email"]
         password = request.POST["password"]
-        
-        user = User.objects.create_user(username, email, password)
-        
-        user.first_name = request.POST["first_name"]
-        user.last_name = request.POST["last_name"]
-        user.save()
-        
-        return redirect("/accounts/login")
-    else:
-        return render(request,"registro.html",{})
+        first_name = request.POST.get("first_name", "")
+        last_name = request.POST.get("last_name", "")
+        user = User.objects.create_user(username=username, email=email, password=password)
+        # Asignar nombres al usuario si se proporcionan
+        user.first_name = first_name
+        user.last_name = last_name
+        user.save() 
+        return redirect("welcome")
+    
+    # Renderizar la plantilla de registro con un formulario vacío
+    return render(request, "registro.html")

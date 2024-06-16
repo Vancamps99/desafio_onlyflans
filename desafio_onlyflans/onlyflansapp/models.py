@@ -23,4 +23,4 @@ class ContactForm(models.Model):
     message = models.TextField()
     
     def __str__(self) -> str:
-        return f"Contact form: {self.id} - {self.customer_email}"
+        return f"Nombre correo: {self.customer_name} - {self.customer_email}"
